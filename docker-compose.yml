@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server:${MC_CONTAINER_VERS}
+    ports:
+      - "${MC_SERVER_PORT}:25565"
+    volumes:
+      - "./mc:/data"
+    environment:
+      EULA: "TRUE"
+      ENABLE_AUTOPAUSE: "TRUE"
+      OVERRIDE_SERVER_PROPERTIES: "TRUE"
+      MAX_TICK_TIME: "-1"
+      TZ: America/Chicago
+      VERSION: ${MC_SERVER_VERS}
+      MOTD: ${MC_SERVER_MOTD}
+      WHITELIST: ${MC_SERVER_WHITELIST}
+    restart: always
