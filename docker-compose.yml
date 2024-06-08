@@ -16,4 +16,5 @@ services:
       VERSION: ${MC_SERVER_VERS}
       MOTD: ${MC_SERVER_MOTD}
       WHITELIST: ${MC_SERVER_WHITELIST}
+      MEMORY: 8G
     restart: always
