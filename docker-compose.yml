@@ -6,7 +6,7 @@ services:
     ports:
       - "${MC_SERVER_PORT}:25565"
     volumes:
-      - "./mc:/data"
+      - ./mc:/data
     environment:
       EULA: "TRUE"
       ENABLE_AUTOPAUSE: "TRUE"
