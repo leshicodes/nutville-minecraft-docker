@@ -14,7 +14,10 @@ BEGIN {
         Write-Error "Unable to find container '$dockerContainerName'"
         exit 1
     }
-
+    if ($LASTEXITCODE -eq 1) {
+        Write-Error "Unable to find container '$dockerContainerName'"
+        exit 1
+    }
 }
 PROCESS {}
 END {}
