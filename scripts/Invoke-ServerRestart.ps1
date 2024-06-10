@@ -20,7 +20,19 @@ BEGIN {
     }
 }
 PROCESS {
+    $restartTimerHalf = $restartTimer / 2
+
     & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in $restartTimer seconds..."
-    # Start-Sleep -Seconds $restartTimer
+    Start-Sleep -Seconds $restartTimerHalf
+    & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in $restartTimerHalf seconds..."
+    Start-Sleep -Seconds $restartTimerHalf
+    & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in 3..."
+    Start-Sleep -Seconds 1
+    & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in 2..."
+    Start-Sleep -Seconds 1
+    & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in 1..."
+    Start-Sleep -Seconds 1
+
+    docker restart $dockerContainerName
 }
 END {}
