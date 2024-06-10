@@ -19,5 +19,7 @@ BEGIN {
         exit 1
     }
 }
-PROCESS {}
+PROCESS {
+    docker exec -it $dockerContainerName rcon-cli "/say test"
+}
 END {}
