@@ -20,7 +20,7 @@ BEGIN {
     }
 }
 PROCESS {
-    & "$PSScriptRoot/Invoke-ServerMessage.ps1" "-messageContent Server Restarting in $restartTimer seconds..."
+    & "$PSScriptRoot/Invoke-ServerMessage.ps1" -messageContent "Server Restarting in $restartTimer seconds..."
     # Start-Sleep -Seconds $restartTimer
 }
 END {}
