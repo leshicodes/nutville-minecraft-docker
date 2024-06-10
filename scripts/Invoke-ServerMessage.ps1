@@ -2,10 +2,10 @@
 param (
     [Parameter(Mandatory = $false)]
     [string]
-    $dockerContainerName = 'minecraft-docker-2024-minecraft-1'
-    # [Parameter(Mandatory = $true)]
-    # [string]
-    # $messageContent
+    $dockerContainerName = 'minecraft-docker-2024-minecraft-1',
+    [Parameter(Mandatory = $true)]
+    [string]
+    $messageContent
 )
 BEGIN {
     try {
@@ -20,6 +20,6 @@ BEGIN {
     }
 }
 PROCESS {
-    docker exec -it $dockerContainerName rcon-cli "/say test"
+    docker exec -it $dockerContainerName rcon-cli "/say $messageContent"
 }
 END {}
