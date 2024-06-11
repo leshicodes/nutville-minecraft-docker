@@ -19,4 +19,5 @@ services:
       ENABLE_WHITELIST: true
       OVERRIDE_WHITELIST: false
       MEMORY: 8G
+      LOG_LEVEL: debug
     restart: always
