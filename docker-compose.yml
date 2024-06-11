@@ -15,7 +15,7 @@ services:
       TZ: America/Chicago
       VERSION: ${MC_SERVER_VERS}
       MOTD: ${MC_SERVER_MOTD}
-      WHITELIST: ${MC_SERVER_WHITELIST}
+      # WHITELIST: ${MC_SERVER_WHITELIST}
       ENABLE_WHITELIST: true
       OVERRIDE_WHITELIST: false
       MEMORY: 8G
