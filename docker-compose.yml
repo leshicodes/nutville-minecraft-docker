@@ -5,7 +5,7 @@ services:
     image: itzg/minecraft-server:${MC_CONTAINER_VERS}
     ports:
       - "${MC_SERVER_PORT}:25565"
-      - 8123:8123
+      - 8888:8123
     volumes:
       - ./mc:/data
     environment:
