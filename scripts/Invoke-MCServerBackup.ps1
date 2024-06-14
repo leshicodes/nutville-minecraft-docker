@@ -1,3 +1,3 @@
 #  $PSScriptRoot
 
-zip -r backup.zip $PSScriptRoot/../mc
+zip -r backup.zip $PSScriptRoot/../mc -x "$PSScriptRoot/../mc/plugins/*"
