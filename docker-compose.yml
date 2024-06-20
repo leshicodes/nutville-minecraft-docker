@@ -19,6 +19,6 @@ services:
       # WHITELIST: ${MC_SERVER_WHITELIST}
       ENABLE_WHITELIST: true
       OVERRIDE_WHITELIST: false
-      MEMORY: 8G
+      MEMORY: 16G
       TYPE: spigot
     restart: always
