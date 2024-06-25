@@ -3,6 +3,8 @@ version: '3.8'
 services:
   minecraft:
     image: itzg/minecraft-server:${MC_CONTAINER_VERS}
+    container_name: minecraft
+    hostname: minecraft
     ports:
       - "${MC_SERVER_PORT}:25565"
       - 8888:8123
@@ -22,3 +24,14 @@ services:
       MEMORY: 16G
       TYPE: spigot
     restart: always
+  minecraft-backup:
+    image: itzg/mc-backup
+    depends_on:
+      minecraft:
+        condition: service_healthy
+    environment:
+      BACKUP_INTERVAL: "2h"
+      RCON_HOST: minecraft
+    volumes:
+      - ./mc:/data:ro
+      - ./mc-backups:/backups
