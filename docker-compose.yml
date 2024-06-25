@@ -26,6 +26,8 @@ services:
     restart: always
   minecraft-backup:
     image: itzg/mc-backup
+    container_name: minecraft-backup-sidecar
+    hostname: minecraft-backup-sidecar
     depends_on:
       minecraft:
         condition: service_healthy
