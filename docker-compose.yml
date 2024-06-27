@@ -38,7 +38,7 @@ services:
       PRE_BACKUP_SCRIPT: |
         echo "Beginning MC Server backup"
         # echo "Also before backup from $$RCON_HOST to $$DEST_DIR"
-      POST_BACKUP_SCRIPT_FILE: /post-backup.sh
+      POST_BACKUP_SCRIPT_FILE: /data/post-backup.sh
     volumes:
       - ./mc:/data:ro
       - ./mc-backups:/backups
