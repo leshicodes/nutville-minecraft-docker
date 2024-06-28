@@ -24,21 +24,21 @@ services:
       MEMORY: 16G
       TYPE: spigot
     restart: always
-  minecraft-backup:
-    image: itzg/mc-backup
-    container_name: minecraft-backup-sidecar
-    hostname: minecraft-backup-sidecar
-    depends_on:
-      minecraft:
-        condition: service_healthy
-    environment:
-      BACKUP_INTERVAL: "24h"
-      RCON_HOST: minecraft
-      PRUNE_BACKUPS_DAYS: 2
-      PRE_BACKUP_SCRIPT: |
-        echo "Beginning MC Server backup"
-        # echo "Also before backup from $$RCON_HOST to $$DEST_DIR"
-      POST_BACKUP_SCRIPT_FILE: /data/post-backup.sh
-    volumes:
-      - ./mc:/data:ro
-      - ./mc-backups:/backups
+  # minecraft-backup:
+  #   image: itzg/mc-backup
+  #   container_name: minecraft-backup-sidecar
+  #   hostname: minecraft-backup-sidecar
+  #   depends_on:
+  #     minecraft:
+  #       condition: service_healthy
+  #   environment:
+  #     BACKUP_INTERVAL: "24h"
+  #     RCON_HOST: minecraft
+  #     PRUNE_BACKUPS_DAYS: 2
+  #     PRE_BACKUP_SCRIPT: |
+  #       echo "Beginning MC Server backup"
+  #       # echo "Also before backup from $$RCON_HOST to $$DEST_DIR"
+  #     POST_BACKUP_SCRIPT_FILE: /data/post-backup.sh
+  #   volumes:
+  #     - ./mc:/data:ro
+  #     - ./mc-backups:/backups
