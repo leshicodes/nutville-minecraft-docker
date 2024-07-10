@@ -38,6 +38,7 @@ services:
       PRE_BACKUP_SCRIPT: |
         echo "Beginning MC Server backup"
         # echo "Also before backup from $$RCON_HOST to $$DEST_DIR"
+      EXCLUDES: "*.jar,cache,logs,*.tmp,plugins/dynmap,./plugins/dynmap,./plugins/dynmap/*"
       POST_BACKUP_SCRIPT_FILE: /data/post-backup.sh
     volumes:
       - ./mc:/data:ro
