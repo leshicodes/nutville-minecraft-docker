@@ -32,7 +32,7 @@ services:
       minecraft:
         condition: service_healthy
     environment:
-      BACKUP_INTERVAL: "24h"
+      BACKUP_INTERVAL: "12h"
       RCON_HOST: minecraft
       PRUNE_BACKUPS_DAYS: 2
       PRE_BACKUP_SCRIPT: |
