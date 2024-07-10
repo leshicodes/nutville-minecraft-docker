@@ -37,6 +37,7 @@ services:
       PRUNE_BACKUPS_DAYS: 2
       PRE_BACKUP_SCRIPT: |
         echo "Beginning MC Server backup"
+        rcon-cli --password 1a0a527d7a9355487d8ea14f --host minecraft say "Beginning MC Server backup"
         # echo "Also before backup from $$RCON_HOST to $$DEST_DIR"
       EXCLUDES: "*.jar,cache,logs,*.tmp,plugins/dynmap,./plugins/dynmap,./plugins/dynmap/*"
       POST_BACKUP_SCRIPT_FILE: /data/post-backup.sh
