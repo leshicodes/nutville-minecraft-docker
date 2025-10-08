@@ -11,6 +11,7 @@ services:
             - MC_RAM=16G
             - TZ=America/Chicago
             - SERVER_BUILD=64
+            - RUN_COMMAND="paper-1.21.10-64.jar"
         volumes:
             - './mc:/mcserver'
         image: okazakee/mcserver-lazymc-docker:latest
