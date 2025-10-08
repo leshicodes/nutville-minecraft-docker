@@ -2,7 +2,7 @@
 param (
     [Parameter(Mandatory = $false)]
     [string]
-    $dockerContainerName = 'minecraft-docker-2024-minecraft-1',
+    $dockerContainerName = 'minecraft',
     [Parameter(Mandatory = $true)]
     [string]
     $messageContent
