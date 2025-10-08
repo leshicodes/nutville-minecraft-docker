@@ -25,6 +25,7 @@ services:
       TYPE: paper
       PAPER_BUILD: 64
       PAPER_CHANNEL: experimental
+      SEED: ${MC_SERVER_SEED}
     restart: always
   # minecraft-backup:
   #   image: itzg/mc-backup
