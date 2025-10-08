@@ -7,7 +7,7 @@ services:
         container_name: minecraft
         environment:
             - SERVER_PROVIDER=paper
-            - MC_VERSION=1.21.10
+            - MC_VERSION=1.21.9
             - MC_RAM=16G
             - TZ=America/Chicago
         volumes:
