@@ -10,6 +10,7 @@ services:
             - MC_VERSION=1.21.9
             - MC_RAM=16G
             - TZ=America/Chicago
+            - SERVER_BUILD=64
         volumes:
             - './mc:/mcserver'
         image: okazakee/mcserver-lazymc-docker:latest
