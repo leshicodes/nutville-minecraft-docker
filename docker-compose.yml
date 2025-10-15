@@ -7,7 +7,7 @@ services:
     hostname: ${MC_SERVER_HOSTNAME}
     ports:
       - "${MC_SERVER_PORT}:25565"
-      - 8888:8888
+      # - 8888:8888
     volumes:
       - ./mc:/data
     env_file:
@@ -32,3 +32,16 @@ services:
     volumes:
       - ./mc:/data:ro
       - ./mc-backups:/backups
+  bluemap:
+    image: ghcr.io/bluemap-minecraft/bluemap:latest
+    container_name: bluemap
+    hostname: bluemap
+    ports:
+      - "8100:8100"
+    volumes:
+      # - ./mc/plugins/BlueMap:/app/config
+      - ./bluemap/config:/app/config
+      - ./bluemap/data:/app/data
+      - ./mc/world:/app/world:ro
+      - ./bluemap/web:/app/web
+    command: -r -u -w
