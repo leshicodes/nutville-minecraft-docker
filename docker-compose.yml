@@ -38,7 +38,6 @@ services:
       BACKUP_INTERVAL: "12h"
       RCON_HOST: minecraft
       PRUNE_BACKUPS_DAYS: 2
-      RCON_HOST: mc
       # since this service waits for mc to be healthy, no initial delay is needed
       INITIAL_DELAY: 0
       # PRE_BACKUP_SCRIPT: |
