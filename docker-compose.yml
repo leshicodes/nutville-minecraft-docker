@@ -23,7 +23,7 @@ services:
       OVERRIDE_WHITELIST: false
       MEMORY: 16G
       TYPE: paper
-      PAPER_BUILD: 71
+      PAPER_BUILD: 74
       PAPER_CHANNEL: experimental
       SEED: ${MC_SERVER_SEED}
     restart: always
