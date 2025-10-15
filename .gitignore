@@ -1,3 +1,4 @@
 ./mc/*
 ./mc.old/*
 ./mc-backups/*
+.env.secrets
