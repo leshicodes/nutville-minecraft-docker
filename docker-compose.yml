@@ -45,3 +45,13 @@ services:
       - ./mc/world:/app/world:ro
       - ./bluemap/web:/app/web
     command: -r -u -w
+    networks:
+      default:
+      mediaserver_network:
+        aliases:
+          - bluemap
+
+networks:
+  default:
+  mediaserver_network:
+    external: true
