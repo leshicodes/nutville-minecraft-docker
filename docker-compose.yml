@@ -7,7 +7,7 @@ services:
     hostname: ${MC_SERVER_HOSTNAME}
     ports:
       - "${MC_SERVER_PORT}:25565"
-      # - 8888:8123
+      - 8888:8888
     volumes:
       - ./mc:/data
     env_file:
