@@ -65,7 +65,7 @@ services:
       default:
       mediaserver_network:
         aliases:
-          - newt
+          - newt-mc
 
 
 networks:
