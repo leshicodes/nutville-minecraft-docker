@@ -61,6 +61,9 @@ services:
       - PANGOLIN_ENDPOINT=https://proxy.leshicodes.info
       - NEWT_ID=waomqt0lfc9rbk8
       - ACCEPT_CLIENTS=true
+    mediaserver_network:
+        aliases:
+          - newt-mc
 
 
 networks:
