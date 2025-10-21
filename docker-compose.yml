@@ -55,6 +55,8 @@ services:
     image: fosrl/newt
     container_name: newt
     restart: unless-stopped
+    env_file:
+      - .env.secrets
     environment:
       - PANGOLIN_ENDPOINT=https://proxy.leshicodes.info
       - NEWT_ID=waomqt0lfc9rbk8
