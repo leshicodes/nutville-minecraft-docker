@@ -51,6 +51,17 @@ services:
         aliases:
           - bluemap
 
+  newt:
+    image: fosrl/newt
+    container_name: newt
+    restart: unless-stopped
+    environment:
+      - PANGOLIN_ENDPOINT=https://proxy.leshicodes.info
+      - NEWT_ID=waomqt0lfc9rbk8
+      - NEWT_SECRET=${NEWT_SECRET}
+      - ACCEPT_CLIENTS=true
+
+
 networks:
   default:
   mediaserver_network:
