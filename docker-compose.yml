@@ -14,61 +14,61 @@ services:
       - .env
       - .env.secrets
     restart: always
-  minecraft-backup:
-    image: itzg/mc-backup
-    container_name: minecraft-backup-sidecar
-    hostname: minecraft-backup-sidecar
-    depends_on:
-      minecraft:
-        condition: service_healthy
-    env_file:
-      - .env
-      - .env.secrets
-    environment:
-      RCON_HOST: ${MC_SERVER_HOSTNAME}
-      PRE_BACKUP_SCRIPT: |
-        echo "Beginning MC Server backup"
-        rcon-cli --host minecraft say "Beginning MC Server backup ; You may experience lag."
-    volumes:
-      - ./mc:/data:ro
-      - ./mc-backups:/backups
-  bluemap:
-    image: ghcr.io/bluemap-minecraft/bluemap:latest
-    container_name: bluemap
-    hostname: bluemap
-    ports:
-      - "8100:8100"
-    volumes:
-      # - ./mc/plugins/BlueMap:/app/config
-      - ./bluemap/config:/app/config
-      - ./bluemap/data:/app/data
-      - ./mc/world:/app/world:ro
-      - ./bluemap/web:/app/web
-    command: -r -u -w
-    networks:
-      default:
-      mediaserver_network:
-        aliases:
-          - bluemap
+  # minecraft-backup:
+  #   image: itzg/mc-backup
+  #   container_name: minecraft-backup-sidecar
+  #   hostname: minecraft-backup-sidecar
+  #   depends_on:
+  #     minecraft:
+  #       condition: service_healthy
+  #   env_file:
+  #     - .env
+  #     - .env.secrets
+  #   environment:
+  #     RCON_HOST: ${MC_SERVER_HOSTNAME}
+  #     PRE_BACKUP_SCRIPT: |
+  #       echo "Beginning MC Server backup"
+  #       rcon-cli --host minecraft say "Beginning MC Server backup ; You may experience lag."
+  #   volumes:
+  #     - ./mc:/data:ro
+  #     - ./mc-backups:/backups
+  # bluemap:
+  #   image: ghcr.io/bluemap-minecraft/bluemap:latest
+  #   container_name: bluemap
+  #   hostname: bluemap
+  #   ports:
+  #     - "8100:8100"
+  #   volumes:
+  #     # - ./mc/plugins/BlueMap:/app/config
+  #     - ./bluemap/config:/app/config
+  #     - ./bluemap/data:/app/data
+  #     - ./mc/world:/app/world:ro
+  #     - ./bluemap/web:/app/web
+  #   command: -r -u -w
+  #   networks:
+  #     default:
+  #     mediaserver_network:
+  #       aliases:
+  #         - bluemap
 
-  newt:
-    image: fosrl/newt
-    container_name: newt
-    restart: unless-stopped
-    env_file:
-      - .env.secrets
-    environment:
-      - PANGOLIN_ENDPOINT=https://proxy.leshicodes.info
-      - NEWT_ID=waomqt0lfc9rbk8
-      - ACCEPT_CLIENTS=true
-    networks:
-      default:
-      mediaserver_network:
-        aliases:
-          - newt-mc
+  # newt:
+  #   image: fosrl/newt
+  #   container_name: newt
+  #   restart: unless-stopped
+  #   env_file:
+  #     - .env.secrets
+  #   environment:
+  #     - PANGOLIN_ENDPOINT=https://proxy.leshicodes.info
+  #     - NEWT_ID=jldq7jg1mave1gn
+  #     - ACCEPT_CLIENTS=true
+    # networks:
+    #   default:
+    #   mediaserver_network:
+    #     aliases:
+    #       - newt-mc
 
 
-networks:
-  default:
-  mediaserver_network:
-    external: true
+# networks:
+#   default:
+#   mediaserver_network:
+#     external: true
