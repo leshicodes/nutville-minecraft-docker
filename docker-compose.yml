@@ -43,6 +43,8 @@ services:
       - ./bluemap/config:/app/config
       - ./bluemap/data:/app/data
       - ./mc/world:/app/world:ro
+      - ./mc/world_nether:/app/world_nether:ro
+      - ./mc/world_the_end:/app/world_the_end:ro
       - ./bluemap/web:/app/web
     command: -r -u -w
     networks:
