@@ -46,6 +46,7 @@ services:
       - ./mc/world_nether:/app/world_nether:ro
       - ./mc/world_the_end:/app/world_the_end:ro
       - ./bluemap/web:/app/web
+      - /home/jjambrose1s/git-projects/minecraft-docker-2024/mc/world:/app/world_nostalgia:ro
     command: -r -u -w
     networks:
       default:
