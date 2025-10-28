@@ -7,6 +7,7 @@ services:
     hostname: ${MC_SERVER_HOSTNAME}
     ports:
       - "${MC_SERVER_PORT}:25565"
+      - "${MC_GEYSERMC_PORT}:19132"
       # - 8888:8888
     volumes:
       - ./mc:/data
