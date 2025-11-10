@@ -21,7 +21,7 @@ BEGIN {
 }
 PROCESS {
     if ($TargetPlayer) {
-        docker exec -it $dockerContainerName rcon-cli "/tellraw $TargetPlayer {\"text\":\"Herobrine joined the game\",\"color\":\"yellow\"}"
+        docker exec -it $dockerContainerName rcon-cli "/tellraw $TargetPlayer {`"text`":`"Herobrine joined the game`",`"color`":`"yellow`"}"
     }
     else {
         docker exec -it $dockerContainerName rcon-cli '/tellraw @a {"text":"Herobrine joined the game","color":"yellow"}'
