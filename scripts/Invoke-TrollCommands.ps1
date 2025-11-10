@@ -22,9 +22,13 @@ BEGIN {
 PROCESS {
     if ($TargetPlayer) {
         docker exec -it $dockerContainerName rcon-cli "/tellraw $TargetPlayer {`"text`":`"Herobrine joined the game`",`"color`":`"yellow`"}"
+        Start-Sleep -Seconds $(Get-Random -Maximum 400)
+        docker exec -it $dockerContainerName rcon-cli "/tellraw $TargetPlayer `"<Herobrine> I'm watching you :)`""
     }
     else {
         docker exec -it $dockerContainerName rcon-cli '/tellraw @a {"text":"Herobrine joined the game","color":"yellow"}'
+        Start-Sleep -Seconds $(Get-Random -Maximum 400)
+        docker exec -it $dockerContainerName rcon-cli "/tellraw @a `"<Herobrine> I'm watching you :)`""
     }
 }
 END {}
